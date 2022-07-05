@@ -13,6 +13,9 @@ const section1 = document.getElementById('section--1')
 const section2 = document.getElementById('section--2')
 const section3 = document.getElementById('section--3')
 
+const navbar = document.getElementById('navbar');
+
+
 console.log(workLink)
 
 
@@ -36,7 +39,19 @@ thirdName.innerHTML = nameArray3.map((char, i) => (
 )).join('');
 
 
+// Sticky Navbar
 
+window.onscroll = function () { stickyNav() };
+
+let sticky = navbar.offsetTop;
+
+function stickyNav() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add('sticky')
+    } else {
+        navbar.classList.remove('sticky');
+    }
+}
 
 
 // aboutLink.addEventListener('click', function (e) {
